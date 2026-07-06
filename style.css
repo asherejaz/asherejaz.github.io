@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(14, 0, 0);
+}
+
+/* root */
+a {
+    text-decoration: none;
+    color: red;
+    font-family: "JetBrains Mono", monospace;
+    background: rgb(46, 0, 0);
+    padding: 5px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+a:hover {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.473);
+}
+
+/* keyframes */
+.show {
+    opacity: 1;
+}
+
+.hide {
+    opacity: 0;
+}
+
+/* menubtn */
+.menubtn {
+    display: none;
+}
+
+/* closebtn */
+.closebtn {
+    opacity: 1;
+    position: fixed;
+    top: 10px;
+    right: 120px;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 20px;
+    gap: 10px;
+
+    background: rgb(27, 0, 0);
+}
+
+.navbar h2 {
+    color: red;
+    left: 20px;
+    position: fixed;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.navbar svg {
+    opacity: 0;
+    display: block;
+}
+
+/* mainpage */
+.mainpage {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 50px;
+    margin-top: 100px;
+}
+
+h1 {
+    color: transparent;
+    background: linear-gradient(red, rgb(68, 0, 0));
+    background-clip: text;
+    font-family: "Orbitron", sans-serif;
+    font-size: 70px;
+
+}
+
+/* responsiveness */
+@media (max-width: 406px) {
+    .navbar {
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        right: 0px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        transform: translateX(50px);
+
+        padding: 250px 30px;
+        transition: 0.5s;
+    }
+
+    .navbar.show {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+
+    .navbar h2 {
+        display: none;
+    }
+
+    .menubtn {
+        display: block;
+        position: fixed;
+        right: 10px;
+        top: 20px;
+        z-index: 9999;
+    }
+
+    .menubtn.hide {
+        opacity: 0;
+    }
+
+    .closebtn.show {
+        opacity: 1;
+    }
+
+    .mainpage h1 {
+        font-size: 50px;
+    }
+}
